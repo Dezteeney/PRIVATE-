@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "antd";
+import Header from "../components/Header/Header.js";
 import Login from "../user/login/Login";
-import Signup from "../user/login/Signup";
+import Signup from "../user/signup/Signup";
+import Profile from "../user/profile/Profile";
 
 const { Content } = Layout;
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <Layout className="layout">
@@ -17,6 +19,7 @@ const App = () => {
         <div className="container">
           <Routes>
             <Route
+              exact
               path="/login"
               element={
                 <Login
@@ -25,17 +28,26 @@ const App = () => {
                 />
               }
             />
-          <Route
-            exact
-            path="/signup"
-            element={
-              <Signup
-                currentUser={currentUser}
-                isAuthenticated={isAuthenticated}
-              />
-            }
-          />
-            </Routes>
+            <Route
+              exact
+              path="/signup"
+              element={
+                <Signup
+                  currentUser={currentUser}
+                  isAuthenticated={isAuthenticated}
+                />
+              }
+            />
+            <Route
+              exact
+              path="/profile"
+              element={
+                <Header>
+                  <Profile currentUser={currentUser} />
+                </Header>
+              }
+            />
+          </Routes>
         </div>
       </Content>
     </Layout>
