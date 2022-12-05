@@ -49,10 +49,19 @@ const App = () => {
             />
             <Route
 exact
-path="/"
+path="/home"
 element={
   <Header>
     <home currentUser={currentUser} />
+  </Header>
+}
+/>
+<Route
+exact
+path="/myFeeds"
+element={
+  <Header>
+    <myFeeds currentUser={currentUser} />
   </Header>
 }
 />
