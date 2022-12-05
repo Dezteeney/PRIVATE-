@@ -47,6 +47,15 @@ const App = () => {
                 </Header>
               }
             />
+            <Route
+exact
+path="/"
+element={
+  <Header>
+    <home currentUser={currentUser} />
+  </Header>
+}
+/>
           </Routes>
         </div>
       </Content>
