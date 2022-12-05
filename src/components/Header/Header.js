@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { AppContext } from "../../context/applicationContext";
+
 
 const Header = (props) => {
+  const appContext = useContext(AppContext);
+
   const logout = () => {
-    //logout funtionality goes here
+      appContext.logout();
   };
   return (
     <>

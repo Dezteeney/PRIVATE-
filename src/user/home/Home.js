@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
 import AddPost from "../../components/addPost/AddPost";
-import PostCard from "../../components/postCard/PostCard";
+import PostCard from "../../components/postCard/postcard";
 import dummyPost from "../../dummyPost.json";
 
-import LoadingIndicator from "../../components/loadingIndicator/LoadingIndicator";
+import LoadingIndicator from "../../components/LoadingIndicator/loadingIndicator";
 
 const Home = ({ currentUser }) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getPosts();

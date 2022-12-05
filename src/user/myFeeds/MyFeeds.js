@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./myfeeds.css";
-import PostCard from "../../components/postCard/PostCard";
+import PostCard from "../../components/postCard/postcard";
 import dummyPost from "../../dummyPost.json";
 
-import LoadingIndicator from "../../components/loadingIndicator/LoadingIndicator";
+import LoadingIndicator from "../../components/LoadingIndicator/loadingIndicator";
 
 const MyFeeds = ({ currentUser }) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getMyPosts();

@@ -8,7 +8,7 @@ import LoadingIndicator from "../LoadingIndicator/loadingIndicator";
 import FormField from "../formField/FormField";
 
 const SecurityProfile = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
